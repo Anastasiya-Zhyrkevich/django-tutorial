@@ -67,3 +67,11 @@ class QuestionIndexViewTests(TestCase):
         response.context['latest_question_list'],
         ['<Question: Past question 2.>', '<Question: Past question 1.>']
     )
+
+
+class ExampleViewTests(TestCase):
+
+  def test_1(self):
+    response = self.client.get(reverse('polls:simple_example'))
+
+    self.assertEqual(response.content, b'Simple response')
